@@ -22,7 +22,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', { email, password });
+      const response = await axios.post('https://backend-2m3p.onrender.com/api/auth/register', { email, password });
       const { userId, token, message } = response.data;
       
       // Save userId and token in local storage or context

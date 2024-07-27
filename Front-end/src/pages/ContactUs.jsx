@@ -52,7 +52,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact/submit", {
+      const response = await fetch("https://backend-2m3p.onrender.com/api/contact/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

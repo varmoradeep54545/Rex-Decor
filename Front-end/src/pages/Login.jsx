@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://backend-2m3p.onrender.com/api/auth/login",
         { email, password }
       );
       const { token, userId } = response.data;

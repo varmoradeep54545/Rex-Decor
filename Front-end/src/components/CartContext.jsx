@@ -34,7 +34,7 @@
 
     const saveCartToServer = async (userId) => {
       try {
-        await axios.post('http://localhost:5000/api/cart/save-cart', { userId, cart });
+        await axios.post('https://backend-2m3p.onrender.com/api/cart/save-cart', { userId, cart });
       } catch (error) {
         console.error('Failed to save cart', error);
       }

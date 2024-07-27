@@ -82,7 +82,7 @@ const Checkout = () => {
         const amountInPaise = Math.round(orderTotal ); // Convert to paise and ensure it's an integer
 
         const razorresponse = await fetch(
-          'http://localhost:5000/api/razorpay/create-order',
+          'https://backend-2m3p.onrender.com/api/razorpay/create-order',
           {
             method: 'POST',
             headers: {
@@ -127,7 +127,7 @@ const Checkout = () => {
                 type: 'razorpay',
                 payment_id: response.razorpay_payment_id,
               };
-              const response2 = await fetch('http://localhost:5000/api/order/order-success', {
+              const response2 = await fetch('https://backend-2m3p.onrender.com/api/order/order-success', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
