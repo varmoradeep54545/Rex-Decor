@@ -56,7 +56,7 @@ const Register = () => {
         transition={{ duration: 0.5 }}
         className="flex items-center justify-center h-48 md:h-auto md:w-1/2 bg-gray-200"
        <img
-              src={aboutImage}
+              src={loginlogo}
       ></motion.div>
 
       {/* Form Section */}
