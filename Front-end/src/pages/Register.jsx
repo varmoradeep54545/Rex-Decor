@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserAlt, FaEye, FaEyeSlash } from "react-icons/fa";
+<<<<<<< HEAD
+import { motion } from "framer-motion";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+=======
 
 import { motion } from "framer-motion";
 import axios from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+>>>>>>> 835756c (Modify code)
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -15,12 +22,36 @@ const Register = () => {
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 835756c (Modify code)
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
+<<<<<<< HEAD
+      toast.error('Passwords do not match', { position: 'top-center' });
+      return;
+    }
+    try {
+      const response = await axios.post('https://backend-2m3p.onrender.com/api/auth/register', { email, password });
+      const { userId, token, message } = response.data;
+      
+      // Save userId and token in local storage or context
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('token', token);
+      console.log(userId);
+
+      toast.success(message, { position: 'top-center' });
+      setTimeout(() => {
+        navigate('/login'); // Redirect to login page after successful registration
+      }, 1500);
+    } catch (error) {
+      console.error("Registration error:", error.response ? error.response.data : error.message);
+      toast.error(error.response ? error.response.data.message : 'Registration failed', { position: 'top-center' });
+=======
       toast.error("Passwords do not match", { position: "top-center" });
       return;
     }
@@ -43,10 +74,32 @@ const Register = () => {
         error.response ? error.response.data.message : "Registration failed",
         { position: "top-center" }
       );
+>>>>>>> 835756c (Modify code)
     }
   };
 
   return (
+<<<<<<< HEAD
+    <div className="flex h-[600px] flex-col md:flex-row border border-gray-300 bg-white rounded-md shadow-lg m-10 overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex w-1/2 items-center justify-center"
+        style={{
+          backgroundImage: `url('../assets/loginlogo.jpg')`,
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+        }}
+      ></motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex w-1/2 bg-white items-center justify-center"
+      >
+        <div className="max-w-md w-full space-y-8 p-10">
+=======
     <div className="flex flex-col md:flex-row md:h-[600px] border border-gray-300 bg-white rounded-md shadow-lg m-5  overflow-hidden">
       {/* Image Section */}
       <motion.div
@@ -69,6 +122,7 @@ const Register = () => {
         className="flex items-center justify-center w-full md:w-1/2 bg-white p-6"
       >
         <div className="max-w-md w-full space-y-8">
+>>>>>>> 835756c (Modify code)
           <div>
             <FaUserAlt className="mx-auto h-12 w-auto" />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -112,8 +166,13 @@ const Register = () => {
                   placeholder="Password"
                 />
                 <span
+<<<<<<< HEAD
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
+=======
                   onClick={() => setShowPassword((prev) => !prev)}
                   className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-600"
+>>>>>>> 835756c (Modify code)
                 >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
@@ -133,14 +192,48 @@ const Register = () => {
                   placeholder="Confirm Password"
                 />
                 <span
+<<<<<<< HEAD
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+=======
                   onClick={() => setShowConfirmPassword((prev) => !prev)}
                   className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-600"
+>>>>>>> 835756c (Modify code)
                 >
                   {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
             </div>
 
+<<<<<<< HEAD
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                />
+                <label
+                  htmlFor="remember-me"
+                  className="ml-2 block text-sm text-gray-900"
+                >
+                  Remember me
+                </label>
+              </div>
+
+              <div className="text-sm">
+                <a
+                  href="#"
+                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+            </div>
+
+=======
+>>>>>>> 835756c (Modify code)
             <div>
               <button
                 type="submit"
@@ -152,11 +245,21 @@ const Register = () => {
           </form>
           <div className="mt-6 flex items-center justify-center">
             <div className="w-full border-t border-gray-300" />
+<<<<<<< HEAD
+            <div className="w-full flex justify-center text-sm text-gray-600 -mt-3">
+              Or continue with
+            </div>
+            <div className="w-full border-t border-gray-300" />
+          </div>
+          
+          <div className="w-full flex justify-center text-sm text-gray-600 ">
+=======
             
             <div className="w-full border-t border-gray-300" />
           </div>
 
           <div className="w-full flex justify-center text-sm text-gray-600">
+>>>>>>> 835756c (Modify code)
             Already have an account?{" "}
             <Link to="/login" className="text-indigo-500 font-bold pl-2">
               Sign in here
