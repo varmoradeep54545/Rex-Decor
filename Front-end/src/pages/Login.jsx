@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import loginlogo from "../assets/loginlogo.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -78,14 +79,16 @@ const Login = () => {
     <div className="flex flex-col md:flex-row md:h-[600px] border border-gray-300 bg-white rounded-md shadow-lg m-5  overflow-hidden">
       {/* Image Section */}
       <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center justify-center h-48 md:h-auto md:w-1/2 bg-gray-200"
-        style={{
-          backgroundImage: `url('/src/assets/loginlogo.jpg')`,
-        }}
-      ></motion.div>
+            className="md:w-1/2"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <img
+              src={loginlogo}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
       {/* Form Section */}
       <motion.div
