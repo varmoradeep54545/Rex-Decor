@@ -55,11 +55,8 @@ const Register = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex items-center justify-center h-48 md:h-auto md:w-1/2 bg-gray-200"
-        style={{
-          backgroundImage: `url('{loginlogo}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+       <img
+              src={aboutImage}
       ></motion.div>
 
       {/* Form Section */}
