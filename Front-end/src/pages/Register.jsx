@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserAlt, FaEye, FaEyeSlash } from "react-icons/fa";
+import loginlogo from "../assets/loginlogo.jpg";
 
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -55,7 +56,7 @@ const Register = () => {
         transition={{ duration: 0.5 }}
         className="flex items-center justify-center h-48 md:h-auto md:w-1/2 bg-gray-200"
         style={{
-          backgroundImage: `url('/src/assets/loginlogo.jpg')`,
+          backgroundImage: `url('{loginlogo}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
