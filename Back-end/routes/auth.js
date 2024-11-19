@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const { v4: uuidv4 } = require("uuid"); // UUID generator for userId
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 const { generateToken } = require("../jwt");
 
 // POST /api/auth/register
