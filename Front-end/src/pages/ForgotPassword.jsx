@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
-
+import loginlogo from "../assets/loginlogo.jpg";
 const ForgotPassword = () => {
   const [showChangePassword, setShowChangePassword] = useState(true);
   const [passwords, setPasswords] = useState({
@@ -100,16 +100,13 @@ const ForgotPassword = () => {
     <>
       <div className="flex flex-col md:flex-row h-auto md:h-[600px] border border-gray-300 bg-white rounded-md shadow-lg m-4 md:m-10 overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="w-full md:w-1/2 h-48 md:h-full flex items-center justify-center"
-          style={{
-            backgroundImage: `url('/src/assets/loginlogo.jpg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></motion.div>
+        className="md:w-1/2"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <img src={loginlogo} className="w-full h-full object-cover" />
+      </motion.div>
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
