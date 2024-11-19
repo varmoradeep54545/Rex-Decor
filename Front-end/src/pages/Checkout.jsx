@@ -106,7 +106,7 @@ const Checkout = () => {
   };
 
   const handlePayment = async () => {
-    const response = await fetch("http://localhost:5000/api/create-order", {
+    const response = await fetch("https://rex-decor-api.vercel.app/api/create-order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -152,7 +152,7 @@ const Checkout = () => {
           };
 
           // Send the order details to the backend for saving to MongoDB
-          fetch("http://localhost:5000/api/save-order", {
+          fetch("https://rex-decor-api.vercel.app/api/save-order", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
