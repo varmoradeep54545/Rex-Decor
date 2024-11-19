@@ -27,7 +27,7 @@ const Register = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://rex-decor-api.vercel.app/api/auth/register",
         { email, password }
       );
 
