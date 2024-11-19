@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 
 // PUT /api/profile/save
 router.put("/save/:userId", async (req, res) => {
