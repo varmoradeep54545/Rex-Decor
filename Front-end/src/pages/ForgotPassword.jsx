@@ -42,7 +42,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/profile/change-password/${userId}`,
+        `https://rex-decor-api.vercel.app/profile/change-password/${userId}`,
         {
           method: "PUT",
           headers: {
