@@ -1,9 +1,11 @@
+
+import loginlogo from "../assets/loginlogo.jpg";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
-import loginlogo from "../assets/loginlogo.jpg";
+
 const ForgotPassword = () => {
   const [showChangePassword, setShowChangePassword] = useState(true);
   const [passwords, setPasswords] = useState({
@@ -42,7 +44,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await fetch(
-        `https://rex-decor-api.vercel.app/profile/change-password/${userId}`,
+        `https://rex-decor-api.vercel.app/api/profile/change-password/${userId}`,
         {
           method: "PUT",
           headers: {
@@ -99,7 +101,7 @@ const ForgotPassword = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row h-auto md:h-[600px] border border-gray-300 bg-white rounded-md shadow-lg m-4 md:m-10 overflow-hidden">
-        <motion.div
+           <motion.div
         className="md:w-1/2"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
