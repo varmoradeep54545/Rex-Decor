@@ -39,7 +39,7 @@ const Profile = () => {
     const fetchProfileData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/profile/${userId}`
+          `https://rex-decor-api.vercel.app/api/profile/${userId}`
         );
         const data = await response.json();
 
@@ -137,7 +137,7 @@ const Profile = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/profile/change-password/${userId}`,
+        `https://rex-decor-api.vercel.app/api/profile/change-password/${userId}`,
         {
           method: "PUT",
           headers: {
@@ -195,7 +195,7 @@ const Profile = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/profile/save/${userId}`,
+        `https://rex-decor-api.vercel.app/api/profile/save/${userId}`,
         {
           method: "PUT",
           headers: {
