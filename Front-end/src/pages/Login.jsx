@@ -50,7 +50,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://rex-decor-api.vercel.app/api/auth/login",
         { email, password }
       );
 
